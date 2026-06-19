@@ -2,6 +2,7 @@
 set -euo pipefail
 
 DOMAIN="astracore.dev"
+WWW_DOMAIN="www.astracore.dev"
 REPO_URL="https://github.com/ihorhnennyi/astracore-site.git"
 APP_DIR="/var/www/astracore-site"
 NGINX_SITE="/etc/nginx/sites-available/astracore.dev"
@@ -27,6 +28,12 @@ fi
 
 echo "==> Node $(node -v), npm $(npm -v)"
 
+echo "==> Remove old default site"
+rm -f /etc/nginx/sites-enabled/default
+rm -f /etc/nginx/sites-available/default
+rm -rf /var/www/html
+mkdir -p /var/www/html
+
 echo "==> Preparing app directory"
 mkdir -p /var/www
 if [[ -d "$APP_DIR/.git" ]]; then
@@ -44,7 +51,6 @@ npm run build
 echo "==> Configuring nginx"
 cp "$APP_DIR/deploy/nginx.astracore.dev.conf" "$NGINX_SITE"
 ln -sf "$NGINX_SITE" /etc/nginx/sites-enabled/astracore.dev
-rm -f /etc/nginx/sites-enabled/default
 
 nginx -t
 systemctl enable nginx
@@ -53,7 +59,7 @@ systemctl restart nginx
 echo "==> Requesting SSL certificate"
 certbot --nginx \
   -d "$DOMAIN" \
-  -d "www.$DOMAIN" \
+  -d "$WWW_DOMAIN" \
   --non-interactive \
   --agree-tos \
   -m "support@astracore.dev" \
