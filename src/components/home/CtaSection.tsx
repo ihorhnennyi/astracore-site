@@ -21,7 +21,7 @@ export function CtaSection() {
             />
 
             <div className="relative grid w-full min-w-0 gap-8 sm:gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-12 xl:gap-16">
-              <ScrollReveal direction="left" className="min-w-0 space-y-8">
+              <ScrollReveal direction="up" className="min-w-0 space-y-8">
                 <SectionHeading
                   label={t('home.ctaLabel')}
                   title={t('home.ctaTitle')}
@@ -50,7 +50,7 @@ export function CtaSection() {
                 </div>
               </ScrollReveal>
 
-              <ScrollReveal direction="right" delay={140} className="min-w-0">
+              <ScrollReveal direction="up" delay={140} className="min-w-0">
                 <ContactForm />
               </ScrollReveal>
             </div>

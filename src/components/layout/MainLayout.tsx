@@ -9,7 +9,7 @@ type MainLayoutProps = {
 
 export function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="relative min-h-svh w-full overflow-x-clip bg-astra-space font-sans text-white">
+    <div className="relative min-h-svh w-full max-w-full overflow-x-hidden bg-astra-space font-sans text-white">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-astra-cyan focus:px-4 focus:py-2 focus:text-astra-space"
@@ -18,7 +18,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       </a>
       <Starfield />
       <Header />
-      <main id="main-content" className="relative z-10 w-full min-w-0 overflow-x-clip pt-16">
+      <main id="main-content" className="relative z-10 w-full min-w-0 max-w-full overflow-x-hidden pt-16">
         {children}
       </main>
       <Footer />

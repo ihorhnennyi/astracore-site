@@ -24,7 +24,7 @@ export function SectionHeading({
       )}
     >
       {label ? <p className="type-label text-astra-cyan">{label}</p> : null}
-      <h2 className="display-title text-2xl sm:text-4xl lg:text-5xl">{title}</h2>
+      <h2 className="display-title text-xl sm:text-4xl lg:text-5xl">{title}</h2>
       {description ? (
         <p className="type-body-lg max-w-2xl text-white/55">{description}</p>
       ) : null}

@@ -26,16 +26,12 @@ export function ValuesSection() {
           />
         </ScrollReveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 overflow-x-hidden sm:grid-cols-2 lg:grid-cols-4">
           {VALUE_IDS.map((id, index) => {
             const Icon = VALUE_ICONS[id]
 
             return (
-              <ScrollReveal
-                key={id}
-                direction={index % 2 === 0 ? 'left' : 'right'}
-                delay={60 + index * 100}
-              >
+              <ScrollReveal key={id} direction="up" delay={60 + index * 100}>
                 <article className="glass-cosmic h-full min-w-0 rounded-2xl p-5 text-center transition-colors hover:border-astra-cyan/25 sm:p-6">
                   <span className="mx-auto inline-flex size-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-astra-cyan">
                     <Icon className="size-5" strokeWidth={1.5} />

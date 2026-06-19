@@ -24,13 +24,9 @@ export function StatsSection() {
           <SectionHeading label={t('home.statsLabel')} title={t('home.statsTitle')} align="center" />
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 overflow-x-hidden sm:gap-x-8 sm:gap-y-10 lg:grid-cols-4">
           {STATS.map((stat, index) => (
-            <ScrollReveal
-              key={stat.id}
-              direction={index < 2 ? 'left' : 'right'}
-              delay={100 + index * 90}
-            >
+            <ScrollReveal key={stat.id} direction="up" delay={100 + index * 90}>
               <StatOrbitalRing
                 value={stat.value}
                 suffix={stat.suffix}

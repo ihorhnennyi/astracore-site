@@ -97,20 +97,23 @@
     font-family: var(--font-sans);
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
-    overflow-x: clip;
+    overflow-x: hidden;
     width: 100%;
+    max-width: 100%;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: inherit;
-    overflow-x: clip;
+    overflow-x: hidden;
     width: 100%;
+    max-width: 100%;
   }
 
   #app {
-    overflow-x: clip;
+    overflow-x: hidden;
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -798,6 +801,9 @@
 
   .scroll-reveal {
     opacity: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     transition:
       opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
@@ -825,20 +831,17 @@
   }
 
   @media (max-width: 639px) {
-    .scroll-reveal--left {
-      transform: translate3d(-18px, 0, 0);
-    }
-
+    .scroll-reveal--left,
     .scroll-reveal--right {
-      transform: translate3d(18px, 0, 0);
+      transform: translate3d(0, 20px, 0);
     }
 
     .scroll-reveal--up {
-      transform: translate3d(0, 24px, 0);
+      transform: translate3d(0, 20px, 0);
     }
 
     .scroll-reveal--down {
-      transform: translate3d(0, -24px, 0);
+      transform: translate3d(0, -20px, 0);
     }
   }
 

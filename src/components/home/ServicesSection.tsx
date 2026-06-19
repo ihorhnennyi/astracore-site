@@ -41,16 +41,12 @@ export function ServicesSection() {
           />
         </ScrollReveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 overflow-x-hidden sm:grid-cols-2 lg:grid-cols-3">
           {SERVICE_IDS.map((id, index) => {
             const Icon = SERVICE_ICONS[id]
 
             return (
-              <ScrollReveal
-                key={id}
-                direction={index % 2 === 0 ? 'left' : 'right'}
-                delay={80 + (index % 3) * 90}
-              >
+              <ScrollReveal key={id} direction="up" delay={80 + (index % 3) * 90}>
                 <article
                   className={cn(
                     'glass-cosmic group h-full min-w-0 rounded-2xl p-5 transition-all sm:p-6',

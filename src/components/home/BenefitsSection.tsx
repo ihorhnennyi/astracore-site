@@ -11,15 +11,15 @@ export function BenefitsSection() {
       <MilkyWayBg />
 
       <div className="relative z-10 mx-auto grid w-full min-w-0 max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-        <ScrollReveal direction="left">
+        <ScrollReveal direction="up">
           <SectionHeading label={t('home.benefitsLabel')} title={t('home.benefitsTitle')} />
         </ScrollReveal>
 
-        <ol className="relative">
+        <ol className="relative min-w-0">
           {BENEFIT_IDS.map((id, index) => (
             <ScrollReveal
               key={id}
-              direction="right"
+              direction="up"
               delay={100 + index * 70}
               className={cn(index < BENEFIT_IDS.length - 1 && 'mb-12 sm:mb-14')}
             >

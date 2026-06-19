@@ -28,26 +28,25 @@ export function HeroSection() {
   const titleLines = getTitleLines(t('home.titleLines', { returnObjects: true }))
 
   return (
-    <section id="home" className="section-padding relative overflow-x-clip">
+    <section id="home" className="section-padding relative overflow-x-hidden">
       <div className="mx-auto grid w-full min-w-0 max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
-        <ScrollReveal direction="left" className="min-w-0 space-y-6 text-center lg:text-left">
+        <ScrollReveal direction="up" className="min-w-0 space-y-6 text-center lg:text-left">
           <div className="space-y-2">
             <p className="type-label text-white/45">{t('home.badge')}</p>
             <p className="type-body text-astra-cyan">{t('home.partner')}</p>
           </div>
 
           <h1 className="space-y-1 break-words">
-            {titleLines.map((line, index) => (
-              <ScrollReveal key={line.text} direction="left" delay={100 + index * 80}>
-                <span
-                  className={cn(
-                    'display-title hero-title block',
-                    line.accent ? 'hero-gradient-text' : 'text-white',
-                  )}
-                >
-                  {line.text}
-                </span>
-              </ScrollReveal>
+            {titleLines.map((line) => (
+              <span
+                key={line.text}
+                className={cn(
+                  'display-title hero-title block',
+                  line.accent ? 'hero-gradient-text' : 'text-white',
+                )}
+              >
+                {line.text}
+              </span>
             ))}
           </h1>
 
@@ -59,16 +58,18 @@ export function HeroSection() {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={340}>
-            <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-              <CosmicButton href="#contact">{t('home.ctaPrimary')}</CosmicButton>
-              <CosmicButton href="#services" variant="outline">
+            <div className="flex w-full max-w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:justify-start">
+              <CosmicButton href="#contact" className="w-full sm:w-auto">
+                {t('home.ctaPrimary')}
+              </CosmicButton>
+              <CosmicButton href="#services" variant="outline" className="w-full sm:w-auto">
                 {t('home.ctaSecondary')}
               </CosmicButton>
             </div>
           </ScrollReveal>
         </ScrollReveal>
 
-        <ScrollReveal direction="right" delay={180} className="flex min-w-0 justify-center lg:justify-end">
+        <ScrollReveal direction="up" delay={180} className="flex min-w-0 justify-center lg:justify-end">
           <OrbitalVisual />
         </ScrollReveal>
       </div>
