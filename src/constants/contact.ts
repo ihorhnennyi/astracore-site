@@ -1,0 +1,5 @@
+export const PHONE_NUMBER = '+380 99 050 56 96'
+export const PHONE_HREF = 'tel:+380990505696'
+export const EMAIL = 'support@astracore.dev'
+export const EMAIL_HREF = 'mailto:support@astracore.dev'
+export const WEBSITE = 'https://astracore.dev'

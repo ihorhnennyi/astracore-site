@@ -1,0 +1,7 @@
+export { AudienceSection } from './AudienceSection'
+export { BenefitsSection } from './BenefitsSection'
+export { CtaSection } from './CtaSection'
+export { HeroSection } from './HeroSection'
+export { ServicesSection } from './ServicesSection'
+export { StatsSection } from './StatsSection'
+export { ValuesSection } from './ValuesSection'
