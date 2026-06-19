@@ -12,7 +12,12 @@ apt-get update -y
 apt-get upgrade -y
 
 echo "==> Installing base packages"
-apt-get install -y curl git nginx certbot python3-certbot-nginx
+apt-get install -y curl git nginx certbot python3-certbot-nginx ufw
+
+if ufw status | grep -q "Status: active"; then
+  ufw allow OpenSSH
+  ufw allow 'Nginx Full'
+fi
 
 if ! command -v node >/dev/null 2>&1 || [[ "$(node -v | cut -d. -f1 | tr -d v)" -lt 20 ]]; then
   echo "==> Installing Node.js 22"
@@ -51,7 +56,7 @@ certbot --nginx \
   -d "www.$DOMAIN" \
   --non-interactive \
   --agree-tos \
-  --register-unsafely-without-email \
+  -m "support@astracore.dev" \
   --redirect
 
 echo "==> Done"
