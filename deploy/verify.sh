@@ -17,8 +17,12 @@ ls -la "$APP_DIR/dist/index.html" || echo "dist/index.html missing"
 head -n 22 "$APP_DIR/dist/index.html" | grep -E '<title>|favicon' || true
 
 echo
+echo "==> Other web folders in /var/www"
+ls -la /var/www/ || true
+
+echo
 echo "==> Live response"
-curl -s "https://$DOMAIN" | grep -oE '<title>[^<]+' || true
+curl -sk --max-time 10 "https://${DOMAIN}" | grep -oE '<title>[^<]+' || echo "Could not reach https://${DOMAIN}"
 
 echo
 echo "==> Old default site (should be absent)"

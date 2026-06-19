@@ -62,6 +62,9 @@ for dir in /var/www/*; do
   fi
 done
 
+# Explicitly remove legacy folder from previous deployment
+rm -rf /var/www/astracore
+
 for dir in /home/*/public_html /home/*/domains/*/public_html; do
   if [[ -d "$dir" ]]; then
     echo "Removing panel site folder: $dir"
