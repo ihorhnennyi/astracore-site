@@ -1,6 +1,6 @@
 export function OrbitalVisual() {
   return (
-    <div className="orbital-visual relative mx-auto aspect-square w-full max-w-[22rem] sm:max-w-md" aria-hidden>
+    <div className="orbital-visual relative mx-auto aspect-square w-full max-w-[min(100%,18rem)] overflow-hidden sm:max-w-md" aria-hidden>
       <div className="orbital-dust absolute inset-0" />
 
       <div className="orbital-core-glow absolute inset-[10%] rounded-full" />

@@ -1,7 +1,7 @@
 export function LoaderOrbital() {
   return (
     <div
-      className="orbital-visual relative mx-auto aspect-square w-full max-w-[15rem] sm:max-w-[17rem]"
+      className="orbital-visual relative mx-auto aspect-square w-full max-w-[min(100%,15rem)] overflow-hidden sm:max-w-[17rem]"
       aria-hidden
     >
       <div className="orbital-dust absolute inset-0" />

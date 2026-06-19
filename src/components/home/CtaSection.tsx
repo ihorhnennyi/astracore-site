@@ -7,10 +7,10 @@ export function CtaSection() {
   const { t } = useLocale()
 
   return (
-    <section id="contact" className="section-padding">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="contact" className="section-padding overflow-x-clip">
+      <div className="mx-auto w-full min-w-0 max-w-7xl px-4 sm:px-6">
         <ScrollReveal direction="up">
-          <div className="glass-cosmic-strong relative overflow-hidden rounded-3xl p-6 sm:p-10 lg:p-12">
+          <div className="glass-cosmic-strong relative w-full min-w-0 overflow-hidden rounded-2xl p-5 sm:rounded-3xl sm:p-10 lg:p-12">
             <div
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,180,255,0.16),transparent_55%)]"
               aria-hidden
@@ -20,8 +20,8 @@ export function CtaSection() {
               aria-hidden
             />
 
-            <div className="relative grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-12 xl:gap-16">
-              <ScrollReveal direction="left" className="space-y-8">
+            <div className="relative grid w-full min-w-0 gap-8 sm:gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-12 xl:gap-16">
+              <ScrollReveal direction="left" className="min-w-0 space-y-8">
                 <SectionHeading
                   label={t('home.ctaLabel')}
                   title={t('home.ctaTitle')}
@@ -31,26 +31,26 @@ export function CtaSection() {
                 <div className="space-y-4 border-t border-white/10 pt-6">
                   <a
                     href={PHONE_HREF}
-                    className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-astra-cyan"
+                    className="flex min-w-0 items-center gap-3 text-sm text-white/60 transition-colors hover:text-astra-cyan"
                   >
-                    <span className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5">
+                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5">
                       <Phone className="size-4" />
                     </span>
-                    {PHONE_NUMBER}
+                    <span className="min-w-0">{PHONE_NUMBER}</span>
                   </a>
                   <a
                     href={EMAIL_HREF}
-                    className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-astra-cyan"
+                    className="flex min-w-0 items-center gap-3 text-sm text-white/60 transition-colors hover:text-astra-cyan"
                   >
-                    <span className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5">
+                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5">
                       <Mail className="size-4" />
                     </span>
-                    {EMAIL}
+                    <span className="min-w-0 break-all">{EMAIL}</span>
                   </a>
                 </div>
               </ScrollReveal>
 
-              <ScrollReveal direction="right" delay={140}>
+              <ScrollReveal direction="right" delay={140} className="min-w-0">
                 <ContactForm />
               </ScrollReveal>
             </div>

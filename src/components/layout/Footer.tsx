@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="relative z-10 overflow-hidden border-t border-white/5 bg-black/40">
       <FooterCosmicBg />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
+      <div className="relative mx-auto w-full min-w-0 max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
         <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:gap-10">
           <div className="col-span-2 flex flex-col items-center space-y-3 text-center sm:space-y-4 lg:col-span-1 lg:items-start lg:text-left">
             <Logo className="h-8" />
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-white/5 py-5 text-center text-xs text-white/40">
+      <div className="relative border-t border-white/5 px-4 py-5 text-center text-xs break-words text-white/40">
         {t('footer.rights', { year })}
       </div>
     </footer>

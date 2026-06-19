@@ -97,11 +97,20 @@
     font-family: var(--font-sans);
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+    overflow-x: clip;
+    width: 100%;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: inherit;
+    overflow-x: clip;
+    width: 100%;
+  }
+
+  #app {
+    overflow-x: clip;
+    width: 100%;
   }
 }
 
@@ -177,6 +186,8 @@
     font-weight: 600;
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
 
   .type-label {
@@ -186,9 +197,17 @@
     text-transform: uppercase;
   }
 
+  @media (max-width: 639px) {
+    .type-label {
+      letter-spacing: 0.12em;
+    }
+  }
+
   .hero-title {
-    font-size: clamp(1.75rem, 5.5vw, 3.25rem);
-    line-height: 1.05;
+    font-size: clamp(1.5rem, 7.5vw, 3.25rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
 
   .type-body {
@@ -803,6 +822,24 @@
   .scroll-reveal--visible {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+
+  @media (max-width: 639px) {
+    .scroll-reveal--left {
+      transform: translate3d(-18px, 0, 0);
+    }
+
+    .scroll-reveal--right {
+      transform: translate3d(18px, 0, 0);
+    }
+
+    .scroll-reveal--up {
+      transform: translate3d(0, 24px, 0);
+    }
+
+    .scroll-reveal--down {
+      transform: translate3d(0, -24px, 0);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

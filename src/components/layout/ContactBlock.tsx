@@ -44,7 +44,7 @@ export function ContactBlock({ className, onLinkClick }: ContactBlockProps) {
         </span>
         <span className="min-w-0 text-left">
           <span className="type-label block text-[0.65rem] text-white/40">{t('footer.email')}</span>
-          <span className="mt-0.5 block truncate text-sm font-medium tracking-tight text-white transition-colors group-hover:text-astra-cyan">
+          <span className="mt-0.5 block break-all text-sm font-medium tracking-tight text-white transition-colors group-hover:text-astra-cyan">
             {EMAIL}
           </span>
         </span>

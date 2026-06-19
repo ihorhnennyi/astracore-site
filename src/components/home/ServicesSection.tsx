@@ -31,8 +31,8 @@ export function ServicesSection() {
   const { t } = useLocale()
 
   return (
-    <section id="services" className="section-padding">
-      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+    <section id="services" className="section-padding overflow-x-clip">
+      <div className="mx-auto w-full min-w-0 max-w-7xl space-y-10 px-4 sm:px-6">
         <ScrollReveal direction="up">
           <SectionHeading
             label={t('home.servicesLabel')}
@@ -53,7 +53,7 @@ export function ServicesSection() {
               >
                 <article
                   className={cn(
-                    'glass-cosmic group h-full rounded-2xl p-5 transition-all sm:p-6',
+                    'glass-cosmic group h-full min-w-0 rounded-2xl p-5 transition-all sm:p-6',
                     'hover:border-astra-cyan/30 hover:shadow-[0_0_32px_oklch(78%_0.14_220_/_0.1)]',
                   )}
                 >
@@ -65,7 +65,7 @@ export function ServicesSection() {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="mt-4 text-base font-semibold leading-snug text-white sm:text-lg">
+                  <h3 className="mt-4 text-base font-semibold leading-snug break-words text-white sm:text-lg">
                     {t(`services.${id}.title`)}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/50">

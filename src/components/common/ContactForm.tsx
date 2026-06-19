@@ -85,9 +85,9 @@ export function ContactForm({ className }: { className?: string }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={cn('glass-cosmic space-y-5 rounded-2xl p-6 sm:p-8', className)}
+      className={cn('glass-cosmic w-full min-w-0 space-y-5 rounded-2xl p-5 sm:p-8', className)}
     >
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid min-w-0 gap-5 sm:grid-cols-2">
         <div className="sm:col-span-1">
           <label className="cosmic-label" htmlFor="contact-name">
             {t('form.name')}

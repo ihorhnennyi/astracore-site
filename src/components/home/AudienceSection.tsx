@@ -24,8 +24,8 @@ export function AudienceSection() {
   const { t } = useLocale()
 
   return (
-    <section id="audience" className="section-padding border-y border-white/5 bg-white/[0.02]">
-      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+    <section id="audience" className="section-padding overflow-x-clip border-y border-white/5 bg-white/[0.02]">
+      <div className="mx-auto w-full min-w-0 max-w-7xl space-y-10 px-4 sm:px-6">
         <ScrollReveal direction="up">
           <SectionHeading
             label={t('home.audienceLabel')}
@@ -41,11 +41,11 @@ export function AudienceSection() {
 
             return (
               <ScrollReveal key={id} direction="up" delay={70 + index * 80}>
-                <article className="glass-cosmic h-full rounded-2xl p-6 text-center transition-colors hover:border-astra-cyan/25">
+                <article className="glass-cosmic h-full min-w-0 rounded-2xl p-5 text-center transition-colors hover:border-astra-cyan/25 sm:p-6">
                   <span className="mx-auto inline-flex size-12 items-center justify-center rounded-full border border-astra-cyan/25 bg-astra-cyan/10 text-astra-cyan">
                     <Icon className="size-5" strokeWidth={1.5} />
                   </span>
-                  <h3 className="mt-4 text-lg font-semibold text-white">{t(`audience.${id}.title`)}</h3>
+                  <h3 className="mt-4 text-base font-semibold break-words text-white sm:text-lg">{t(`audience.${id}.title`)}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/50">
                     {t(`audience.${id}.description`)}
                   </p>

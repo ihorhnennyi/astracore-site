@@ -19,7 +19,7 @@ export function StatsSection() {
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+      <div className="relative mx-auto w-full min-w-0 max-w-7xl space-y-10 px-4 sm:px-6">
         <ScrollReveal direction="up">
           <SectionHeading label={t('home.statsLabel')} title={t('home.statsTitle')} align="center" />
         </ScrollReveal>

@@ -15,8 +15,8 @@ export function ValuesSection() {
   const { t } = useLocale()
 
   return (
-    <section id="about" className="section-padding">
-      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6">
+    <section id="about" className="section-padding overflow-x-clip">
+      <div className="mx-auto w-full min-w-0 max-w-7xl space-y-10 px-4 sm:px-6">
         <ScrollReveal direction="up">
           <SectionHeading
             label={t('home.valuesLabel')}
@@ -36,11 +36,11 @@ export function ValuesSection() {
                 direction={index % 2 === 0 ? 'left' : 'right'}
                 delay={60 + index * 100}
               >
-                <article className="glass-cosmic h-full rounded-2xl p-6 text-center transition-colors hover:border-astra-cyan/25">
+                <article className="glass-cosmic h-full min-w-0 rounded-2xl p-5 text-center transition-colors hover:border-astra-cyan/25 sm:p-6">
                   <span className="mx-auto inline-flex size-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-astra-cyan">
                     <Icon className="size-5" strokeWidth={1.5} />
                   </span>
-                  <h3 className="mt-4 text-base font-semibold text-white">{t(`values.${id}.title`)}</h3>
+                  <h3 className="mt-4 text-base font-semibold break-words text-white">{t(`values.${id}.title`)}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/50">
                     {t(`values.${id}.description`)}
                   </p>
